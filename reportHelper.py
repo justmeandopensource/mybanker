@@ -48,7 +48,7 @@ def expenseStatsBar(username, year):
 
 # Generate line chart for income expense trend since beginning for a user
 def inexTrendAll(username):
-  chart = pygal.Line(legend_at_bottom=True, interpolate="hermite", pretty_print=True, tooltip_border_radius=10, fill=True, height=400, style=LightColorizedStyle, dots_size=1, x_label_rotation=270)
+  chart = pygal.Line(legend_at_bottom=True, pretty_print=True, tooltip_border_radius=10, fill=True, height=400, style=LightColorizedStyle, dots_size=1, x_label_rotation=270)
   income_data = []
   expense_data = []
   labelSeries = []
@@ -106,7 +106,7 @@ def exTrendAll(username):
 
 # Generate line chart for category
 def categoryStats(username, category, period="YEAR_MONTH"):
-  chart = pygal.Line(tooltip_border_radius=10, interpolate="hermite", fill=True, style=LightColorizedStyle, height=350, dot_size=1, x_label_rotation=270, show_legend=False)
+  chart = pygal.Line(tooltip_border_radius=10, fill=True, style=LightColorizedStyle, height=350, dot_size=1, x_label_rotation=270, show_legend=False)
   periodAbr = "Yearly"
   periodAbr = "Monthly" if "MONTH" in period else periodAbr
   chart.title = "(%s) Stats for category: %s" % (periodAbr, category)
