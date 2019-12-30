@@ -163,7 +163,7 @@ def addCategory(name, cat_type):
     query = "INSERT INTO categories VALUES('%s', '%s')" % (name.upper(), cat_type)
     cursor.execute(query)
     data = cursor.fetchall()
-    if len(data) is 0:
+    if len(data) == 0:
       conn.commit()
       returnstring = "New category %s added" % name
     else:
@@ -201,7 +201,7 @@ def addAccountDB(accinfo):
              (accinfo['name'], accinfo['owner'], accinfo['balance'], accinfo['notes'], accinfo['exclude'], currency, accinfo['type'])
     cursor.execute(query)
     data = cursor.fetchall()
-    if len(data) is 0:
+    if len(data) == 0:
       conn.commit()
       returnString = "New account %s added" % accinfo['name']
     else:
@@ -304,7 +304,7 @@ def getTransactionsForCategory(username, category, period=None, year=None, month
             % (username, category, advQuery, limitQuery)
     cursor.execute(query)
     data = cursor.fetchall()
-    if len(data) is 0:
+    if len(data) == 0:
       data = None
   except Exception as e:
     return None
@@ -340,7 +340,7 @@ def addTransactionsDB(date, notes, amount, category, account, owner):
              (date, notes, category, credit, debit, account, owner)
     cursor.execute(query)
     data = cursor.fetchall()
-    if len(data) is 0:
+    if len(data) == 0:
       conn.commit()
       if updateAccounts(account, owner, amount, updatetype):
         returnString = "Transaction added successfully"
@@ -781,7 +781,7 @@ def sendMessage(owner, subject, message, touser):
     query = "INSERT INTO messages VALUES (NULL, CURDATE(), '%s', '%s', '%s', '%s', 'N')" % (touser, subject, message.replace("\n", "<br>"), getNameofUser(owner))
     cursor.execute(query)
     data = cursor.fetchall()
-    if len(data) is 0:
+    if len(data) == 0:
       conn.commit()
     else:
       returnString = str(data[0])
@@ -855,7 +855,7 @@ def addInvestmentAccountDB(accinfo):
               accinfo['url'], accinfo['urluser'], accinfo['urlpass'], accinfo['notes'])
     cursor.execute(query)
     data = cursor.fetchall()
-    if len(data) is 0:
+    if len(data) == 0:
       conn.commit()
       returnString = "New account %s added" % accinfo['name']
     else:
@@ -999,7 +999,7 @@ def addSIPTransaction(sipinfo):
             % (sipinfo['accid'], sipinfo['sipdate'], sipamount, purchasedUnits, newBalanceUnits, sipinfo['owner'])
     cursor.execute(query)
     data = cursor.fetchall()
-    if len(data) is 0:
+    if len(data) == 0:
       conn.commit()
       returnString = "Sip transaction added "
       msg = updateInvestmentAccounts(sipinfo['accid'], sipinfo['owner'], sipamount, newBalanceUnits, sipinfo['sipdate'])

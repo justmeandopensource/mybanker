@@ -1,7 +1,8 @@
 from flask import Flask
 from flask import current_app as app
 from forex_python.converter import CurrencyRates, CurrencyCodes
-from urllib2 import urlopen, URLError
+from urllib.request import urlopen
+from urllib.error import URLError
 import os
 import re
 from dbHelper import ( getInvestmentAccounts )
