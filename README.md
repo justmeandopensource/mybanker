@@ -27,6 +27,6 @@ So decided to completely start from the scratch and write in python this time. I
     * mariadb-devel
     * gcc
 * Make sure you have a MySQL server that you can connect to and privilege to create database
-* From the root of the repo run **python \_\_init\_\_.py**. It will start the web server on port **8003**. You can change this if you want in \_\_init\_\_.py
-* You can access MyBanker at http://127.0.0.1:8003 or http://localhost:8003 or http://ipaddress:8003 from any other machine
+* From the root of the repo run **python \_\_init\_\_.py**. It will start the web server on port **8888**. You can change this if you want in \_\_init\_\_.py
+* You can access MyBanker at http://127.0.0.1:8888 or http://localhost:8888 or http://ipaddress:8888 from any other machine
 * Or install Apache and configure it as reverse proxy to proxy the requests to 8003 on localhost. The other option is to go by wsgi script which I haven't included
