@@ -12,10 +12,10 @@ INITIAL_SETUP = 'pending'
 # ---------------- #
 # DATABASE DETAILS
 # ---------------- #
-MYSQL_DATABASE_USER = 'mbm'
-MYSQL_DATABASE_PASSWORD = 'mbm'
-MYSQL_DATABASE_HOST = '127.0.0.1'
-MYSQL_DATABASE_DB = 'mbmdev'
+MYSQL_DATABASE_USER = 'mybanker'
+MYSQL_DATABASE_PASSWORD = 'mybanker'
+MYSQL_DATABASE_HOST = 'mysql'
+MYSQL_DATABASE_DB = 'mybanker'
 
 # ------------ #
 # MF NAV Stuff #
