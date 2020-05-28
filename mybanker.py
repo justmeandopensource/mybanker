@@ -7,6 +7,7 @@ from dbHelper import (addInvestmentAccountDB, addSIPTransaction,
                       updateInvestmentAccountDB, updateInvestmentAccountStatus)
 from helper import getCurrencySymbol, getFundNAVDict, getNAV, mfNAV2File
 from reportHelper import investmentTrend
+import os.path
 
 # Initialize Flask object
 app = Flask(__name__)
@@ -29,7 +30,8 @@ def investments():
     if totalAccounts == 0:
         flash("You don't have any investment accounts\nPlease add your investment details")
     else:
-        #mfNAV2File()
+        if not os.path.isfile(app.config['MFNAV_FILE']):
+            mfNAV2File()
         accountsAvailable = "yes"
         activeAccounts = getInvestmentAccounts(session['username'], 'Active')
         holdingAccounts = getInvestmentAccounts(session['username'], 'Holding')
