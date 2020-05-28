@@ -2,3 +2,5 @@ venv
 *.pyc
 todo
 .vscode
+dump
+__pycache__

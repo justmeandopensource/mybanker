@@ -17,13 +17,16 @@
   <h3>Mutual Fund Investments</h3>
   <p>
     <a class="btn btn-sm btn-primary" href="{{ url_for('addinvestment') }}" role="button">
-      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;&nbsp;Add New Investment
+      Add New Investment
     </a>
     {% if activeAccounts %}
       <a class="btn btn-sm btn-primary" href="{{ url_for('addsip') }}" role="button">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;&nbsp;Add SIP Transaction
+        Add SIP Transaction
       </a>
     {% endif %}
+    <a class="btn btn-sm btn-primary" href="{{ url_for('refreshstocks') }}" role="button">
+      Refresh Stocks
+    </a>
    </p>
  </div>
      {% if accountsAvailable %}
