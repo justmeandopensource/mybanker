@@ -7,7 +7,7 @@
 # ---------------- #
 MYSQL_DATABASE_USER = 'mybanker'
 MYSQL_DATABASE_PASSWORD = 'mybanker'
-MYSQL_DATABASE_HOST = 'localhost'
+MYSQL_DATABASE_HOST = 'mysql'
 MYSQL_DATABASE_DB = 'mybanker'
 
 # ------------ #
