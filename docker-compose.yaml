@@ -3,7 +3,7 @@ version: "3"
 services:
 
   mybanker:
-    image: wenkatn/mybanker:1.0
+    image: wenkatn/mybanker:latest
     container_name: mybanker
     ports:
       - '8888:8888'
